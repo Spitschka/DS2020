@@ -1,0 +1,28 @@
+{$this->header}
+
+
+		<div class="box">
+			<div class="box-header">
+				<h3 class="box-title">Offene Entschuldigungen der Klasse {$klasse->getKlassenName()}</h3><br />
+			</div>
+			
+			<div class="box-body">
+				<a href="index.php?page=absenzenberichte&mode=fehlendeSchriftlicheEntschuldigungen&grade={$klasse->getKlassenName()}" class="btn btn-app"><i class="fa fa-print"></i> Liste der fehlenden Entschuldigungen ausdrucken</a>
+			
+				<table class="table table-striped table-hover table-bordered">
+					<tr>
+						<th style="width: 30%">Name</th>
+					</tr>
+					$schuelerHTML
+				</table>
+			</div>
+		
+		</div>
+	
+	</div>
+
+
+
+
+
+{$this->footer}

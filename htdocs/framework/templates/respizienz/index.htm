@@ -1,0 +1,72 @@
+{$this->header}
+
+<div class="box">
+	<div class="box-header">
+		<h3 class="box-title"><i class="fa fa-briefcase"></i> Digitale Respizienz und Archivierung von Leistungsnachweisen</h3>
+		<if($isSchulleitung)><then><br />
+			<h3 class="box-title"> <b>Schulleitung</b></h3>
+		</then></if>
+		
+		<if($isFachbetreuer)><then><br />
+			<h3 class="box-title"> <b>Fachschaftsleitung</b></h3>
+		</then></if>
+	</div>
+	<div class="box-body no-padding">
+		<table class="table table-striped">
+			<tr>
+				<th>Leistungsnachweis</th>
+				<th>Datum</th>
+				<th>Fach</th>
+				<th>Lehrer</th>
+				<th>Digitale Archivierung</th>
+				<th>Respizienz Fachschaftsleitung</th>
+				<th>Respizienz Schulleitung</th>
+				<th>Aktionen</th>
+			</tr>
+			<if($meineHTML == "")><then>
+				<tr>
+					<td colspan="8" style="text-align:center"><i class="fa fa-ban"></i> Bisher kein Leistungsnachweise</td>
+				</tr>
+			</then>
+			<else>
+				$meineHTML
+			</else>
+			</if>
+			
+		</table>
+	
+	</div>
+</div>
+
+$dialoge
+
+<div class="modal fade"id="uploadFile" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">PDF Dokument hochladen</h4>
+      </div>
+      <div class="modal-body">
+        Bitte hier den Leistungsnachweis als gesannte PDF (Sammeldokument) hochladen.
+      	<form action="index.php?page=respizienz&action=uploadFile{$mode}" method="post" enctype="multipart/form-data">
+      		<input type="hidden" name="respizienzID" value="" id="respid">
+      		<input type="file" name="pdfFile" accept=".pdf" class="form-control">
+      		<button type="submit" class="form-control"><i class="fa fa-upload"></i> PDF Datei hochladen</button>
+      	
+      	</form>
+      
+      </div>
+   </div>
+ </div>
+</div>
+
+<script>
+	function uploadFile(respID) {
+		$("#respid").val(respID);
+		$('#uploadFile').modal('show');
+	}
+
+</script>
+
+{$this->footer}

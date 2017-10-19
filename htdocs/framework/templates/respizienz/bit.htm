@@ -1,0 +1,31 @@
+			<tr>
+				<td>{$meine[$i]->getLangname()} (Klasse {$meine[$i]->getKlasse()})<br /><form><button type="button" class="btn btn-info" data-target="#noten{$meine[$i]->getID()}" data-toggle="modal"><i class="fa fa-eye"></i> Noten anzeigen</button></form></td>
+				<td>{$meine[$i]->getDatumAsNaturalDate()}</td>
+				<td>{$meine[$i]->getFach()->getKurzform()}</td>
+				<td>{$meine[$i]->getLehrer()->getKuerzel()}</td>
+				<if($meine[$i]->isAnalog())><then>
+					<td colspan="3" style="text-align: center"><b>Analoge Archivierung</b></td>
+					<td>
+									<if(!$isFachbetreuer && !$isSchulleitung)><then>
+					
+					<a href="index.php?page=respizienz&action=setDigital&respizienzID={$meine[$i]->getID()}{$mode}"><i class="fa fa-retweet"></i> Scanbar markieren(Digital archivieren)</a>
+					
+					</then></if>
+					</td>
+					
+				</then><else>
+				<td>$downloadFile</td>
+				<td>$downloadFileFSL</td>
+				<td>$downloadFileSL</td>
+				
+				<td>
+				<if(!$isFachbetreuer && !$isSchulleitung)><then>
+				
+					<a href="index.php?page=respizienz&action=setAnalog&respizienzID={$meine[$i]->getID()}{$mode}"><i class="fa fa-retweet"></i> Nicht scanbar markieren(Analog archivieren)</a>
+					
+					</then></if>
+					</td>
+				</else></if>
+				<td>
+			</tr>
+		
