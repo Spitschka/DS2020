@@ -16,12 +16,6 @@ class user {
 	
 	private $data;
 	
-	/**
-	 * 
-	 * @var usergroup[]
-	 */
-	private $groups = [];
-	
 	public function __construct($data) {
 		$this->data = $data;
 				
@@ -95,10 +89,6 @@ class user {
 		return $this->data['userFirstName'] . " " . $this->data['userLastName'];
 	}
 	
-	public function isMember($group) {
-		return in_array($group, $this->getGroupNames());
-	}
-
 	
 	/**
 	 * 

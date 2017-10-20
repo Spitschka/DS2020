@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Repräsentiert einen Schüler (ASV Datensatz)
- * @author Christian Spitschka, Spitschka IT Solutions
- */
 class schueler {
 	private static $all = array();
 	private static $cachedAllElternUsers = [];

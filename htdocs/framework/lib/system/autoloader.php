@@ -59,7 +59,6 @@ $classes = [
 	],
 
 	'system' => [
-		'apihandler',
 		'cronhandler',
 	    'resthandler',
 		'DateFunctions',

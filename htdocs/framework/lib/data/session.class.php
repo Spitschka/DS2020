@@ -61,14 +61,6 @@ class session {
 	public function isAdmin() {
 		return $this->userObject->isAdmin();
 	}
-	
-	/**
-	 * Überprüft, ob der Benutzer Zugriff zur Administration hat.
-	 * @return boolean
-	 */
-	public function isAnyAdmin() {
-		return $this->userObject->isAnyAdmin();
-	}
 
 	public function isEltern() {
 		return $this->userObject->isEltern();
